@@ -70,17 +70,3 @@ The Pomodoro Technique is a time management method developed by Francesco Cirill
 ├── tailwind.config.js
 └── input.css
 ```
-
-<h1>Author is:</h1>
-
-<div style="display: flex; align-items: center; max-width: 520px; border: 1px solid #8b949e; border-radius: 5px; padding: 20px 30px; margin: 25px auto;">
-    <img src="https://avatars.githubusercontent.com/u/90643054?s=400&u=8c58715f40795742e1894cce9dffd351292196b8&v=4" style="border-radius: 50%;" width="100px">
-    <div style="margin-left: 30px; margin-top: -20px;">
-        <h1>Zaccal</h1>
-        <p style="margin-top: -20px;">
-        Hello, my name is Adil, I learn on the Frontend developer. I use language programming JavaScript, nice to meet you).
-        </p>
-    </div>
-</div>
-
-<p align="center" style="font-size: 19px;">Profile: <a href="https://github.com/Zaccal">Zaccal</a></p>

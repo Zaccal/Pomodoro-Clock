@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply transition-normal;
+    }
+
+    html {
+        @apply text-[#471515];
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+@layer components {
+    .container {
+        @apply max-w-[356px];
+    }
+
+    .watch span {
+        font-stretch: 110;
+    }
+
+    #blocked span {
+        @apply opacity-50;
+    }
+}

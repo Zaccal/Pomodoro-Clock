@@ -1,0 +1,284 @@
+html.dark button[data-appearance=plus] {
+  background: url("../img/arrow-top-light.svg") no-repeat center center;
+}
+
+html.dark button[data-appearance=minus] {
+  background: url("../img/arrow-bottom-light.svg") no-repeat center center;
+}
+
+button[data-appearance=plus] {
+  background: url("../img/arrow-top.svg") no-repeat center center;
+}
+
+button[data-appearance=minus] {
+  background: url("../img/arrow-bottom.svg") no-repeat center center;
+}
+
+/* Focus time styles */
+html.focus #open-settings, html.focus-longBreak #open-settings {
+  background: url("../img/settings.svg") no-repeat center center, #ffd9d9;
+}
+html.focus #open-settings:hover, html.focus-longBreak #open-settings:hover {
+  background: url("../img/settings.svg") no-repeat center center, rgba(255, 90, 90, 0.71);
+}
+html.focus #stop, html.focus-longBreak #stop {
+  background: url("../img/stop.svg") no-repeat center center, rgba(255, 76, 76, 0.71);
+}
+html.focus #stop:hover, html.focus-longBreak #stop:hover {
+  background: url("../img/stop.svg") no-repeat center center, rgba(255, 90, 90, 0.71);
+}
+html.focus #start, html.focus-longBreak #start {
+  background: url("../img/play.svg") no-repeat center center, rgba(255, 76, 76, 0.71);
+}
+html.focus #start:hover, html.focus-longBreak #start:hover {
+  background: url("../img/play.svg") no-repeat center center, rgba(255, 90, 90, 0.71);
+}
+html.focus #next, html.focus-longBreak #next {
+  background: url("../img/next.svg") no-repeat center center, #ffd9d9;
+}
+html.focus #next:hover, html.focus-longBreak #next:hover {
+  background: url("../img/next.svg") no-repeat center center, rgba(255, 90, 90, 0.71);
+}
+
+html.dark.focus #open-settings, html.dark.focus-longBreak #open-settings {
+  background: url("../img/settings-darkMode.svg") no-repeat center center, rgba(255, 76, 76, 0.15);
+}
+html.dark.focus #open-settings:hover, html.dark.focus-longBreak #open-settings:hover {
+  background: url("../img/settings-darkMode.svg") no-repeat center center, rgba(255, 90, 90, 0.71);
+}
+html.dark.focus #stop, html.dark.focus-longBreak #stop {
+  background: url("../img/stop-darkMode.svg") no-repeat center center, rgba(255, 76, 76, 0.71);
+}
+html.dark.focus #stop:hover, html.dark.focus-longBreak #stop:hover {
+  background: url("../img/stop-darkMode.svg") no-repeat center center, rgba(255, 90, 90, 0.71);
+}
+html.dark.focus #start, html.dark.focus-longBreak #start {
+  background: url("../img/play-darkMode.svg") no-repeat center center, rgba(255, 76, 76, 0.71);
+}
+html.dark.focus #start:hover, html.dark.focus-longBreak #start:hover {
+  background: url("../img/play-darkMode.svg") no-repeat center center, rgba(255, 90, 90, 0.71);
+}
+html.dark.focus #next, html.dark.focus-longBreak #next {
+  background: url("../img/next-darkMode.svg") no-repeat center center, rgba(255, 76, 76, 0.15);
+}
+html.dark.focus #next:hover, html.dark.focus-longBreak #next:hover {
+  background: url("../img/next-darkMode.svg") no-repeat center center, rgba(255, 90, 90, 0.71);
+}
+
+/* Short break time styles */
+html.short-break body {
+  background-color: #F2FFF5;
+  color: #14401D;
+}
+html.short-break #settings > div {
+  background: #F2FFF5;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.039), 0px 5.5px 16px rgba(0, 0, 0, 0.19);
+}
+html.short-break #close-settings span {
+  background-color: #14401D;
+}
+html.short-break #mark {
+  background-color: rgba(77, 218, 110, 0.62);
+  border: 2px solid #14401D;
+}
+html.short-break #open-settings {
+  background: url("../img/shortBreak/settings.svg") no-repeat center center, rgba(77, 218, 110, 0.1490196078);
+}
+html.short-break #open-settings:hover {
+  background: url("../img/shortBreak/settings.svg") no-repeat center center, rgba(125, 236, 151, 0.62);
+}
+html.short-break #stop {
+  background: url("../img/shortBreak/stop.svg") no-repeat center center, rgba(77, 218, 110, 0.62);
+}
+html.short-break #stop:hover {
+  background: url("../img/shortBreak/stop.svg") no-repeat center center, rgba(125, 236, 151, 0.62);
+}
+html.short-break #start {
+  background: url("../img/shortBreak/play.svg") no-repeat center center, rgba(77, 218, 110, 0.62);
+}
+html.short-break #start:hover {
+  background: url("../img/shortBreak/play.svg") no-repeat center center, rgba(125, 236, 151, 0.62);
+}
+html.short-break #next {
+  background: url("../img/shortBreak/next.svg") no-repeat center center, rgba(77, 218, 110, 0.1490196078);
+}
+html.short-break #next:hover {
+  background: url("../img/shortBreak/next.svg") no-repeat center center, rgba(125, 236, 151, 0.62);
+}
+html.short-break .check-point:checked ~ .check {
+  background-color: rgba(125, 236, 151, 0.62);
+}
+html.short-break button[data-appearance=plus] {
+  background: url("../img/shortBreak/arrow-top.svg") no-repeat center center;
+}
+html.short-break button[data-appearance=minus] {
+  background: url("../img/shortBreak/arrow-bottom.svg") no-repeat center center;
+}
+
+html.dark.short-break body {
+  background-color: #040D06;
+  color: #F2FFF5;
+}
+html.dark.short-break #mark {
+  background: rgba(77, 218, 110, 0.15);
+  border: 2px solid #F2FFF5;
+}
+html.dark.short-break #open-settings {
+  background: url("../img/shortBreak/settings-darkMode.svg") no-repeat center center, rgba(77, 218, 110, 0.15);
+}
+html.dark.short-break #open-settings:hover {
+  background: url("../img/shortBreak/settings-darkMode.svg") no-repeat center center, rgba(125, 236, 151, 0.62);
+}
+html.dark.short-break #stop {
+  background: url("../img/shortBreak/stop-darkMode.svg") no-repeat center center, rgba(77, 218, 110, 0.62);
+}
+html.dark.short-break #stop:hover {
+  background: url("../img/shortBreak/stop-darkMode.svg") no-repeat center center, rgba(125, 236, 151, 0.62);
+}
+html.dark.short-break #start {
+  background: url("../img/shortBreak/play-darkMode.svg") no-repeat center center, rgba(77, 218, 110, 0.62);
+}
+html.dark.short-break #start:hover {
+  background: url("../img/shortBreak/play-darkMode.svg") no-repeat center center, rgba(125, 236, 151, 0.62);
+}
+html.dark.short-break #next {
+  background: url("../img/shortBreak/next-darkMode.svg") no-repeat center center, rgba(77, 218, 110, 0.15);
+}
+html.dark.short-break #next:hover {
+  background: url("../img/shortBreak/next-darkMode.svg") no-repeat center center, rgba(125, 236, 151, 0.62);
+}
+html.dark.short-break #settings button span {
+  background-color: #F2FFF5;
+}
+html.dark.short-break #settings h2, html.dark.short-break #settings p, html.dark.short-break #settings input {
+  color: #F2FFF5;
+}
+html.dark.short-break #settings > div {
+  background: #040D06;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.039), 0px 5.5px 16px rgba(0, 0, 0, 0.19);
+}
+html.dark.short-break #settings #close-settings span {
+  background: #F2FFF5;
+}
+html.dark.short-break .check::before {
+  background-color: #F2FFF5;
+}
+html.dark.short-break .check {
+  background-color: rgba(255, 255, 255, 0.24);
+}
+html.dark.short-break .check::before {
+  background-color: #040D06;
+}
+html.dark.short-break .check-point:checked ~ .check {
+  background: rgba(77, 218, 110, 0.62) !important;
+}
+html.dark.short-break button[data-appearance=plus] {
+  background: url("../img/shortBreak/arrow-top-darkMode.svg") no-repeat center center;
+}
+html.dark.short-break button[data-appearance=minus] {
+  background: url("../img/shortBreak/arrow-bottom-darkMode.svg") no-repeat center center;
+}
+
+/* Long break */
+html.long-break body {
+  background-color: #f2f9ff;
+  color: #153047;
+}
+html.long-break #mark {
+  background: rgba(76, 172, 255, 0.15);
+  border: 2px solid #153047;
+}
+html.long-break #open-settings {
+  background: url("../img/longBreak/settings.svg") no-repeat center, rgba(76, 172, 255, 0.15);
+}
+html.long-break #open-settings:hover {
+  background: url("../img/longBreak/settings.svg") no-repeat center, rgba(0, 81, 151, 0.15);
+}
+html.long-break #stop {
+  background: url("../img/longBreak/stop.svg") no-repeat center, rgba(76, 172, 255, 0.62);
+}
+html.long-break #stop:hover {
+  background: url("../img/longBreak/stop.svg") no-repeat center, rgba(21, 98, 165, 0.62);
+}
+html.long-break #start {
+  background: url("../img/longBreak/play.svg") no-repeat center center, rgba(76, 172, 255, 0.62);
+}
+html.long-break #start:hover {
+  background: url("../img/longBreak/play.svg") no-repeat center center, rgba(21, 98, 165, 0.62);
+}
+html.long-break #next {
+  background: url("../img/longBreak/next.svg") no-repeat center center, rgba(76, 178, 255, 0.15);
+}
+html.long-break #next:hover {
+  background: url("../img/longBreak/next.svg") no-repeat center center, rgba(0, 81, 151, 0.15);
+}
+html.long-break #settings > div {
+  background: #F2F9FF;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.039), 0px 5.5px 16px rgba(0, 0, 0, 0.19);
+  color: #153047;
+}
+html.long-break #close-settings span {
+  background-color: #153047;
+}
+html.long-break .check-point:checked ~ .check {
+  background-color: #153047;
+}
+html.long-break button[data-appearance=plus] {
+  background: url("../img/longBreak/arrow-top.svg") no-repeat center center;
+}
+html.long-break button[data-appearance=minus] {
+  background: url("../img/longBreak/arrow-bottom.svg") no-repeat center center;
+}
+
+html.dark.long-break body {
+  background-color: #04090D;
+  color: #F2F9FF;
+}
+html.dark.long-break #mark {
+  background: rgba(76, 172, 255, 0.15);
+  border: 2px solid #F2F9FF;
+}
+html.dark.long-break #open-settings {
+  background: url("../img/longBreak/settings-darkMode.svg") no-repeat center, rgba(76, 172, 255, 0.15);
+}
+html.dark.long-break #open-settings:hover {
+  background: url("../img/longBreak/settings-darkMode.svg") no-repeat center, rgba(43, 130, 206, 0.15);
+}
+html.dark.long-break #stop {
+  background: url("../img/longBreak/stop-darkMode.svg") no-repeat center, rgba(76, 172, 255, 0.62);
+}
+html.dark.long-break #stop:hover {
+  background: url("../img/longBreak/stop-darkMode.svg") no-repeat center, rgba(21, 98, 165, 0.62);
+}
+html.dark.long-break #start {
+  background: url("../img/longBreak/play-darkMode.svg") no-repeat center center, rgba(76, 172, 255, 0.62);
+}
+html.dark.long-break #start:hover {
+  background: url("../img/longBreak/play-darkMode.svg") no-repeat center center, rgba(21, 98, 165, 0.62);
+}
+html.dark.long-break #next {
+  background: url("../img/longBreak/next-darkMode.svg") no-repeat center center, rgba(76, 172, 255, 0.15);
+}
+html.dark.long-break #next:hover {
+  background: url("../img/longBreak/next-darkMode.svg") no-repeat center center, rgba(43, 130, 206, 0.15);
+}
+html.dark.long-break #settings > div {
+  background: #04090D;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.039), 0px 5.5px 16px rgba(0, 0, 0, 0.19);
+  color: #F2F9FF;
+}
+html.dark.long-break #close-settings span {
+  background-color: #F2F9FF;
+}
+html.dark.long-break .check-point:checked ~ .check {
+  background-color: #1a5381;
+}
+html.dark.long-break .check {
+  background-color: rgba(255, 255, 255, 0.24);
+}
+html.dark.long-break button[data-appearance=plus] {
+  background: url("../img/longBreak/arrow-top-darkMode.svg") no-repeat center center;
+}
+html.dark.long-break button[data-appearance=minus] {
+  background: url("../img/longBreak/arrow-bottom-darkMode.svg") no-repeat center center;
+}/*# sourceMappingURL=darkModeElements.css.map */

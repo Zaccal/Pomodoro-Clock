@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="focus">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/icon.png">
+    <!-- font start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <!-- font end -->
+    <link rel="stylesheet" href="./css/darkModeElements.css">
+    <link rel="stylesheet" href="./css/helpStyles.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Pomodoro Clock V.0.1.0</title>
+</head>
+<body class="bg-focus-bg-light transition-normal dark:bg-focus-bg-d">
+
+    <!-- Settings start -->
+
+    <div id="settings" class="hidden  fixed left-0 top-0 w-full h-full transition-normal">
+        <div class="opacity-5 translate-y-[-110%]  transition-normal dark:bg-focus-bg-d bg-focus-bg-light mt-[169px] max-w-[448px] mx-auto relative z-10 shadow-focus-light rounded-[24px] py-[27px] px-[24px]">
+            <div class="flex justify-between items-center w-[400px]">
+                <h2 class="font-bold text-xl transition-normal dark:text-focus-text-color-d">Settings</h2>
+                <button id="close-settings" class="relative w-[11.26px] h-[11.26px]" title="close and save">
+                    <span class="h-[2px] w-full rotate-45 bg-[#471515] absolute dark:bg-focus-text-color-d"></span>
+                    <span class="h-[2px] w-full rotate-[-45deg] bg-[#471515] absolute dark:bg-focus-text-color-d"></span>
+                </button>
+            </div>
+    
+            <ul>
+                <li class="py-[22.5px] flex justify-between items-center max-h-[64px]">
+                    <p class="text-[16px] transition-normal dark:text-focus-text-color-d">Dark mode</p>
+                    <label class="switch">
+                        <input style="-webkit-appearance: none;" type="checkbox" class="check-point invisible hidden">
+                        <span id="dark-mode-btn" class="check bg:bg-[#ffffffaf] relative before:transition-all block w-[34px] h-[20px] rounded-full transition-all cursor-pointer"></span>
+                    </label>
+                </li>
+                <li class="py-[22.5px] flex justify-between items-center max-h-[64px]">
+                    <p class="text-[16px] transition-normal dark:text-focus-text-color-d">Focus length</p>
+                    <div class="number-option dark:border-zinc-700 border-[rgba(0, 0, 0, 0.15)] border-[1px] max-w-[134px] rounded-[8px] flex justify-between">
+                        <input type="number" id="focus-time" value="25" class="dark:text-focus-text-color-d w-[66px] block py-[13px] px-[20px] rounded-[8px] text-[16px] text-[#471515] bg-transparent">
+                        <div class="flex items-end flex-col">
+                            <button data-appearance="plus" class="dark:border-zinc-700 flex justify-center items-center px-[9px] py-[5px] border-[rgba(0, 0, 0, 0.15)] border-b-[1px] border-l-[1px] w-[34px] h-[50%]">
+                            </button>
+                            <button data-appearance="minus" class="dark:border-zinc-700 flex justify-center items-center px-[9px] py-[5px] border-[rgba(0, 0, 0, 0.15)] border-b-[1px] border-l-[1px] w-[34px] h-[50%]">
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="py-[22.5px] flex justify-between items-center max-h-[64px]">
+                    <p class="text-[16px] transition-normal dark:text-focus-text-color-d">Short break</p>
+                    <div class="number-option dark:border-zinc-700 border-[rgba(0, 0, 0, 0.15)] border-[1px] max-w-[134px] rounded-[8px] flex justify-between">
+                        <input id="break-time" type="number" value="5" class="dark:text-focus-text-color-d w-[66px] block py-[13px] px-[20px] rounded-[8px] text-[16px] text-[#471515] bg-transparent">
+                        <div class="flex items-end flex-col">
+                            <button data-appearance="plus" class="dark:border-zinc-700 flex justify-center items-center px-[9px] py-[5px] border-[rgba(0, 0, 0, 0.15)] border-b-[1px] border-l-[1px] w-[34px] h-[50%]">
+                            </button>
+                            <button data-appearance="minus" class="dark:border-zinc-700 flex justify-center items-center px-[9px] py-[5px] border-[rgba(0, 0, 0, 0.15)] border-b-[1px] border-l-[1px] w-[34px] h-[50%]">
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="py-[22.5px] flex justify-between items-center max-h-[64px]">
+                    <p class="text-[16px] transition-normal dark:text-focus-text-color-d">Long break</p>
+                    <div class="number-option dark:border-zinc-700 border-[rgba(0, 0, 0, 0.15)] border-[1px] max-w-[134px] rounded-[8px] flex justify-between">
+                        <input id="long-break-time" type="number" value="15" class="dark:text-focus-text-color-d w-[66px] block py-[13px] px-[20px] rounded-[8px] text-[16px] text-[#471515] bg-transparent">
+                        <div class="flex items-end flex-col">
+                            <button data-appearance="plus" class="dark:border-zinc-700 flex justify-center items-center px-[9px] py-[5px] border-[rgba(0, 0, 0, 0.15)] border-b-[1px] border-l-[1px] w-[34px] h-[50%]">
+                            </button>
+                            <button data-appearance="minus" class="dark:border-zinc-700 flex justify-center items-center px-[9px] py-[5px] border-[rgba(0, 0, 0, 0.15)] border-b-[1px] border-l-[1px] w-[34px] h-[50%]">
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="py-[22.5px] flex justify-between items-center max-h-[64px]">
+                    <p class="text-[16px] transition-normal dark:text-focus-text-color-d">Auto resume timer</p>
+                    <label class="switch">
+                        <input id="autoResume" style="-webkit-appearance: none;" type="checkbox" class="check-point invisible hidden">
+                        <span class="check dark:bg-[#ffffffaf] relative before:transition-all block w-[34px] h-[20px] rounded-full transition-all cursor-pointer"></span>
+                    </label>
+                </li>
+                <li class="py-[22.5px] flex justify-between items-center max-h-[64px]">
+                    <p class="text-[16px] transition-normal dark:text-focus-text-color-d">Sound</p>
+                    <label class="switch">
+                        <input id="sound" style="-webkit-appearance: none;" checked type="checkbox" class="check-point invisible hidden">
+                        <span class="check dark:bg-[#ffffffaf] relative before:transition-all block w-[34px] h-[20px] rounded-full transition-all cursor-pointer"></span>
+                    </label>
+                </li>
+                <li class="py-[22.5px] flex justify-between items-center max-h-[64px]">
+                    <p class="text-[16px] transition-normal dark:text-focus-text-color-d">Notifications</p>
+                    <label class="switch">
+                        <input id="notification" style="-webkit-appearance: none;" type="checkbox" class="check-point invisible hidden">
+                        <span class="check dark:bg-[#ffffffaf] relative before:transition-all block w-[34px] h-[20px] rounded-full transition-all cursor-pointer"></span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Settings end-->
+    
+    <section class="hero mt-[169px] pb-[100px]">
+        <div class="container">
+            <div id="mark" class="bg-element-color dark:border-focus-bg-light flex items-center mb-8 rounded-[9999px] max-w-[136px] mx-auto border-[#471515] border-2 py-[11px] px-[17px]">
+                <img data-img src="./img/focus.svg" alt="focus-icon" class="mr-[9px] w-[30px] h-[25.99px]">
+                <span class="text-xl dark:text-focus-text-color-d">Focus</span>
+            </div>
+            
+            <div class="flex flex-col items-center mb-8 watch">
+                <span class="number text-[256px] font-[200] leading-[85%] dark:text-focus-text-color-d" id="minut">25</span>
+                <span class="number text-[256px] font-[200] leading-[85%] dark:text-focus-text-color-d" id="second">00</span>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <button id="open-settings" title="settings" class="hover:bg-[#FF6E6E] transition-normal rounded-[24px] w-20 h-20">
+                </button>
+                <div id="container_start-stop">
+                    <button id="start" title="start" class="transition-normal hover:bg-[#FF6E6E] rounded-[32px] w-[126px] h-[96px]">
+                    </button>
+                    <button id="stop" title="stop Timer" class="none-btn transition-normal hover:bg-[#FF6E6E] rounded-[32px] w-[126px] h-[96px]">
+                    </button>
+                </div>
+                <button id="next" title="next" class="transition-normal hover:bg-[#FF6E6E] rounded-[24px] w-20 h-20">
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="./scripts/main.js" type="module"></script>
+</body>
+</html>

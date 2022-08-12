@@ -1,0 +1,379 @@
+html.dark button[data-appearance="plus"] {
+    background: url('../img/arrow-top-light.svg') no-repeat center center;
+}
+
+html.dark button[data-appearance="minus"] {
+    background: url('../img/arrow-bottom-light.svg') no-repeat center center;
+}
+
+button[data-appearance="plus"] {
+    background: url('../img/arrow-top.svg') no-repeat center center;
+}
+
+button[data-appearance="minus"] {
+    background: url('../img/arrow-bottom.svg') no-repeat center center;
+}
+
+/* Focus time styles */
+html.focus, html.focus-longBreak {
+    #open-settings {
+        background: url('../img/settings.svg') no-repeat center center, #ffd9d9;
+        
+        &:hover {
+            background: url('../img/settings.svg') no-repeat center center, rgba(255, 90, 90, 0.71);
+        }
+    }
+
+    #stop {
+        background: url('../img/stop.svg') no-repeat center center, rgba(255, 76, 76, 0.71);
+
+        &:hover {
+            background: url('../img/stop.svg') no-repeat center center, rgba(255, 90, 90, 0.71);
+        }
+    }
+
+    #start {
+        background: url('../img/play.svg') no-repeat center center, rgba(255, 76, 76, 0.71);
+        
+        &:hover {
+            background: url('../img/play.svg') no-repeat center center, rgba(255, 90, 90, 0.71);
+        }
+    }
+
+    #next {
+        background: url('../img/next.svg') no-repeat center center, #ffd9d9;
+        
+        &:hover {
+            background: url('../img/next.svg') no-repeat center center, rgba(255, 90, 90, 0.71);
+        }
+    }
+}
+
+html.dark.focus, html.dark.focus-longBreak {
+    #open-settings {
+        background: url('../img/settings-darkMode.svg') no-repeat center center, rgba(255, 76, 76, 0.15);
+        
+        &:hover {
+            background: url('../img/settings-darkMode.svg') no-repeat center center, rgba(255, 90, 90, 0.71);
+        }
+    }
+
+    #stop {
+        background: url('../img/stop-darkMode.svg') no-repeat center center, rgba(255, 76, 76, 0.71);
+        
+        &:hover {
+            background: url('../img/stop-darkMode.svg') no-repeat center center, rgba(255, 90, 90, 0.71);
+        }
+    }
+
+    #start {
+        background: url('../img/play-darkMode.svg') no-repeat center center, rgba(255, 76, 76, 0.71);
+        
+        &:hover {
+            background: url('../img/play-darkMode.svg') no-repeat center center, rgba(255, 90, 90, 0.71);
+        }
+    }
+
+    #next {
+        background: url('../img/next-darkMode.svg') no-repeat center center, rgba(255, 76, 76, 0.15);
+        
+        &:hover {
+            background: url('../img/next-darkMode.svg') no-repeat center center, rgba(255, 90, 90, 0.71);
+        }
+    }
+}
+
+/* Short break time styles */
+html.short-break {
+
+    body  {
+        background-color: #F2FFF5;
+        color: #14401D;
+    }
+
+    #settings > div {
+        background: #F2FFF5;
+        box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.039), 0px 5.5px 16px rgba(0, 0, 0, 0.19);
+    }
+
+    #close-settings span {
+        background-color: #14401D;
+    }
+
+    #mark {
+        background-color: rgba(77, 218, 110, 0.62);
+        border: 2px solid #14401D;
+    }
+
+    #open-settings {
+        background: url('../img/shortBreak/settings.svg') no-repeat center center, #4DDA6E26;
+        
+        &:hover {
+            background: url('../img/shortBreak/settings.svg') no-repeat center center, rgba(125, 236, 151, 0.62);
+        }
+    }
+
+    #stop {
+        background: url('../img/shortBreak/stop.svg') no-repeat center center, rgba(77, 218, 110, 0.62);
+
+        &:hover {
+            background: url('../img/shortBreak/stop.svg') no-repeat center center, rgba(125, 236, 151, 0.62);
+        }
+    }
+
+    #start {
+        background: url('../img/shortBreak/play.svg') no-repeat center center, rgba(77, 218, 110, 0.62);
+        
+        &:hover {
+            background: url('../img/shortBreak/play.svg') no-repeat center center, rgba(125, 236, 151, 0.62);
+        }
+    }
+
+    #next {
+        background: url('../img/shortBreak/next.svg') no-repeat center center, #4DDA6E26;
+        
+        &:hover {
+            background: url('../img/shortBreak/next.svg') no-repeat center center, rgba(125, 236, 151, 0.62);
+        }
+    }
+
+    .check-point:checked ~ .check {
+        background-color: rgba(125, 236, 151, 0.62);
+    }
+
+    button[data-appearance="plus"] {
+        background: url('../img/shortBreak/arrow-top.svg') no-repeat center center;
+    }
+
+    button[data-appearance="minus"] {
+        background: url('../img/shortBreak/arrow-bottom.svg') no-repeat center center;
+    }
+    
+}
+
+html.dark.short-break {
+
+    body {
+        background-color: #040D06;
+        color: #F2FFF5;
+    }
+
+    #mark {
+        background: rgba(77, 218, 110, 0.15);
+        border: 2px solid #F2FFF5;
+    }
+
+    #open-settings {
+        background: url('../img/shortBreak/settings-darkMode.svg') no-repeat center center, rgba(77, 218, 110, 0.15);
+        
+        &:hover {
+            background: url('../img/shortBreak/settings-darkMode.svg') no-repeat center center, rgba(125, 236, 151, 0.62);
+        }
+    }
+
+    #stop {
+        background: url('../img/shortBreak/stop-darkMode.svg') no-repeat center center, rgba(77, 218, 110, 0.62);
+        
+        &:hover {
+            background: url('../img/shortBreak/stop-darkMode.svg') no-repeat center center, rgba(125, 236, 151, 0.62);
+        }
+    }
+
+    #start {
+        background: url('../img/shortBreak/play-darkMode.svg') no-repeat center center, rgba(77, 218, 110, 0.62);
+        
+        &:hover {
+            background: url('../img/shortBreak/play-darkMode.svg') no-repeat center center, rgba(125, 236, 151, 0.62);
+        }
+    }
+
+    #next {
+        background: url('../img/shortBreak/next-darkMode.svg') no-repeat center center, rgba(77, 218, 110, 0.15);
+        
+        &:hover {
+            background: url('../img/shortBreak/next-darkMode.svg') no-repeat center center, rgba(125, 236, 151, 0.62);
+        }
+    }
+
+    #settings {
+        & button span {
+            background-color: #F2FFF5;
+        }
+
+        & h2, p, input {
+            color: #F2FFF5;
+        } 
+
+
+        & > div {
+            background: #040D06;
+            box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.039), 0px 5.5px 16px rgba(0, 0, 0, 0.19);
+        }
+
+        & #close-settings span {
+            background: #F2FFF5;
+        }
+    }
+
+    .check::before {
+        background-color: #F2FFF5;
+    }
+
+    .check {
+        background-color: rgba(255, 255, 255, 0.24);
+        
+        &::before {
+            background-color: #040D06;
+        }
+    }
+
+    .check-point:checked ~ .check {
+        background: rgba(77, 218, 110, 0.62) !important;
+    }
+
+    button[data-appearance="plus"] {
+        background: url('../img/shortBreak/arrow-top-darkMode.svg') no-repeat center center;
+    }
+
+    button[data-appearance="minus"] {
+        background: url('../img/shortBreak/arrow-bottom-darkMode.svg') no-repeat center center;
+    }
+}
+
+/* Long break */
+
+html.long-break {
+    body {
+        background-color: #f2f9ff;
+        color: #153047;
+    }
+
+    #mark {
+        background: rgba(76, 172, 255, 0.15);
+        border: 2px solid #153047;
+    }
+
+    #open-settings {
+        background: url('../img/longBreak/settings.svg') no-repeat center, rgba(76, 172, 255, 0.15);
+
+        &:hover {
+            background: url('../img/longBreak/settings.svg') no-repeat center, rgba(0, 81, 151, 0.15);
+        }
+    }
+
+    #stop {
+        background: url('../img/longBreak/stop.svg') no-repeat center, rgba(76, 172, 255, 0.62);
+
+        &:hover {
+            background: url('../img/longBreak/stop.svg') no-repeat center, rgba(21, 98, 165, 0.62);
+        }
+    }
+
+    #start {
+        background: url('../img/longBreak/play.svg') no-repeat center center, rgba(76, 172, 255, 0.62);
+        
+        &:hover {
+        background: url('../img/longBreak/play.svg') no-repeat center center, rgba(21, 98, 165, 0.62);
+        }
+    }
+
+    #next {
+        background: url('../img/longBreak/next.svg') no-repeat center center, rgba(76, 178, 255, 0.15);
+
+        &:hover {
+            background: url('../img/longBreak/next.svg') no-repeat center center, rgba(0, 81, 151, 0.15);
+        }
+    }
+
+    #settings > div {
+        background: #F2F9FF;
+        box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.039), 0px 5.5px 16px rgba(0, 0, 0, 0.19);
+        color: #153047;
+    }
+
+    #close-settings span {
+        background-color: #153047;
+    }
+
+    .check-point:checked ~ .check {
+        background-color: #153047;
+    }
+
+    button[data-appearance="plus"] {
+        background: url('../img/longBreak/arrow-top.svg') no-repeat center center;
+    }
+
+    button[data-appearance="minus"] {
+        background: url('../img/longBreak/arrow-bottom.svg') no-repeat center center;
+    }
+}
+
+html.dark.long-break {
+    body {
+        background-color: #04090D;
+        color: #F2F9FF;
+    }
+
+    #mark {
+        background:  rgba(76, 172, 255, 0.15);
+        border: 2px solid #F2F9FF;
+    }
+
+    #open-settings {
+        background: url('../img/longBreak/settings-darkMode.svg') no-repeat center, rgba(76, 172, 255, 0.15);
+
+        &:hover {
+            background: url('../img/longBreak/settings-darkMode.svg') no-repeat center, rgba(43, 130, 206, 0.15);
+        }
+    }
+
+    #stop {
+        background: url('../img/longBreak/stop-darkMode.svg') no-repeat center, rgba(76, 172, 255, 0.62);
+
+        &:hover {
+            background: url('../img/longBreak/stop-darkMode.svg') no-repeat center, rgba(21, 98, 165, 0.62);
+        }
+    }
+
+    #start {
+        background: url('../img/longBreak/play-darkMode.svg') no-repeat center center, rgba(76, 172, 255, 0.62);
+        
+        &:hover {
+        background: url('../img/longBreak/play-darkMode.svg') no-repeat center center, rgba(21, 98, 165, 0.62);
+        }
+    }
+
+    #next {
+        background: url('../img/longBreak/next-darkMode.svg') no-repeat center center, rgba(76, 172, 255, 0.15);
+
+        &:hover {
+            background: url('../img/longBreak/next-darkMode.svg') no-repeat center center, rgba(43, 130, 206, 0.15);
+        }
+    }
+
+    #settings > div {
+        background: #04090D;
+        box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.039), 0px 5.5px 16px rgba(0, 0, 0, 0.19);
+        color: #F2F9FF;
+    }
+
+    #close-settings span {
+        background-color: #F2F9FF;
+    }
+
+    .check-point:checked ~ .check {
+        background-color: #1a5381;
+    }
+
+    .check {
+        background-color: rgba(255, 255, 255, 0.24);
+    }
+
+    button[data-appearance="plus"] {
+        background: url('../img/longBreak/arrow-top-darkMode.svg') no-repeat center center;
+    }
+
+    button[data-appearance="minus"] {
+        background: url('../img/longBreak/arrow-bottom-darkMode.svg') no-repeat center center;
+    }
+}

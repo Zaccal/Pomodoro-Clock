@@ -1,0 +1,36 @@
+input[type="number"] {
+    -moz-appearance: textfield;
+    outline: none;
+}
+
+.bg-modal {
+    background: rgba(38, 38, 38, 0.51);
+}
+
+.check {
+    background: rgba(0, 0, 0, 0.24);
+}
+
+.check::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    margin-right: 2px;
+
+    width: 16px;
+    height: 16px;
+    background-color: #fff2f2;
+    border-radius: 50%;
+}
+
+.check-point:checked ~ .check {
+    background: rgba(255, 76, 76, 0.71);
+}
+
+.check-point:checked ~ .check::before {
+    left: auto;
+    right: 0;
+}
+
+.none-btn { display: none; }

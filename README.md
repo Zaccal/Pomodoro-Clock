@@ -15,23 +15,8 @@ The Pomodoro Technique is a time management method developed by Francesco Cirill
 
 <p align="center" style="font-size: 19px;">Design: <a href="https://www.figma.com/community/file/1112830528857083939">Figma</a></p>
 
-<h1 style="display: flex; align-items: center; margin-top: 35px;"><img style="margin-right: 10px;" src="https://cdn-icons-png.flaticon.com/512/1541/1541425.png" width="30px"> <span>Features</span></h1>
 
-<ul>
-    <li style="font-size: 18px;">New functions</li>
-    <li style="font-size: 18px;">Add options in the settings</li>
-    <li style="font-size: 18px;">Make the code better</li>
-    <li style="font-size: 18px;">Add new technologists</li> 
-</ul>
-
-<p style="font-size: 15px; margin-top: 30px;">Features technologists</p>
-
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
-
-
-<h1 style="display: flex; align-items: center; margin-top: 65px;"><img style="margin-right: 10px;" width="35px" src="https://cdn-icons.flaticon.com/png/512/4946/premium/4946348.png?token=exp=1660239403~hmac=6927085dc1629a5b7fbe571a3731b16a" width="30px"> <span>About Porject</span></h1>
+<h1 style="display: flex; align-items: center; margin-top: 65px;"><span>About Porject</span></h1>
 
 <h2>Used technologists:</h2>
 

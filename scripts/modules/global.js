@@ -45,36 +45,21 @@ class Modal {
 class Voice {
     
     /**
-     * @param {string} alarmClock - mp3 file path 
-     * @param {string} notification - notification mp3 file path
+     * @param {string} pathFile - mp3 or mp4 file path 
      */
 
-    constructor(alarmClock, notification) {
-        this._alarmClock = alarmClock
-        this._notification = notification
+    constructor(pathFile, stopTimeVoice = 4000) {
+        this._pathFile = pathFile
+        this.stopTimeVoice = typeof stopTimeVoice === 'number' ? stopTimeVoice : 4000
         this._audio = new Audio()
     }
 
-    set alarmClock(path) {
-        const mp3Search = path.search('mp3')
-        const m4Search = path.search('mp4')
+    set pathFile(path) {
+        const mp3Search = path.split('.').includes('mp3')
+        const m4Search = path.split('.').includes('mp4')
 
-        if (mp3Search !== -1 || m4Search !== -1 && typeof path === 'string') {
-            return this._alarmClock = path
-        } 
-
-        else {
-            alert('Please path must be a format string and file must be mp3 or mp4')
-        }
-
-    }
-
-    set notification(path) {
-        const mp3Search = path.search('mp3')
-        const m4Search = path.search('mp4')
-
-        if (mp3Search !== -1 || m4Search !== -1 && typeof path === 'string') {
-            return this._notification = path
+        if (mp3Search === true || m4Search === true && typeof path === 'string') {
+            return this._path = path
         } 
 
         else {
@@ -87,18 +72,20 @@ class Voice {
 	    this._audio.currentTime = 0;
     }
 
-    getVoiceAlarmClock() {
-        this._audio.src = this._alarmClock
-        this._audio.play()
+    runVoice() {
+        const mp3Search = this._pathFile.split('.').includes('mp3')
+        const m4Search = this._pathFile.split('.').includes('mp4')
 
-        setTimeout(() => { this.stopVoice() }, 4000)
-    }
+        if (mp3Search === true || m4Search === true && typeof this._pathFile === 'string') {
+            this._audio.src = this._pathFile
+            this._audio.play()
 
-    getVoiceNotification() {
-        this._audio.src = this._notification
-        this._audio.play()
+            setTimeout(() => { this.stopVoice() }, this.stopTimeVoice)
+        }
 
-        setTimeout(() => { this.stopVoice() }, 4000)
+        else {
+            alert('Please path must be a format string and file must be mp3, mp4')
+        }
     }
 }
 

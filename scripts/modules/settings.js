@@ -37,25 +37,31 @@ class Settings {
     static toggleDarkMode() {
         document.querySelector('html').classList.toggle('dark')
 
-        const imgTags = []
-        document.querySelectorAll('img[data-img]').forEach(tag => imgTags.unshift(tag))
+        const imgTags = Array.from(document.querySelectorAll('img[data-img]'))
+        const settings = new this(imgTags)
 
         if (document.querySelector('html').classList.contains('dark')) {
             localStorage.theme = 'dark'
 
-            new this(imgTags).changeHtmlImgMode('dark', 'svg')
+            settings.changeHtmlImgMode('dark', 'svg')
 
-        } else {
+        } 
+        
+        else {
             localStorage.theme = 'light'
 
-            new this(imgTags).changeHtmlImgMode('light', 'svg')
+            settings.changeHtmlImgMode('light', 'svg')
         }
 
         const html = document.querySelector('html')
+        const checkTimeFocus = html.classList.contains('focus')
+        const checkTimeShortBreak = html.classList.contains('short-break')
+        const checkTimeFocusLongBreak = html.classList.contains('focus-longBreak')
+        const checkTimeLongBreak = html.classList.contains('long-break')
 
-        html.classList.remove('short-break')
-        html.classList.remove('long-break')
-        html.classList.add('focus')
+        if (checkTimeFocus === true || checkTimeFocusLongBreak === true) { Settings.usePresentTenseStyles('focus') } 
+        else if (checkTimeShortBreak === true) { Settings.usePresentTenseStyles('short-break') } 
+        else if (checkTimeLongBreak === true) { Settings.usePresentTenseStyles('long-break') }
     }
 
 
@@ -64,11 +70,11 @@ class Settings {
         const shortBreakLength = document.querySelector('#break-time').value
         const longBreakLength =document.querySelector('#long-break-time').value
 
-        const timeValues = {}
-
-        timeValues.focus = Number(focusLength)
-        timeValues.shortBreak = Number(shortBreakLength)
-        timeValues.longBreak = Number(longBreakLength)
+        const timeValues = {
+            focus: Number(focusLength),
+            shortBreak: Number(shortBreakLength),
+            longBreak: Number(longBreakLength),
+        }
 
         localStorage.setItem('timeValues', JSON.stringify(timeValues))
     }
@@ -94,6 +100,7 @@ class Settings {
             else {
                 mark.querySelector('img').setAttribute('src', './img/focus.svg')
             }
+
 
             if (valueTimes.focus < 10) {
                 minutHtmlElement.innerHTML = `0${valueTimes.focus}`
@@ -139,6 +146,7 @@ class Settings {
                 mark.querySelector('img').setAttribute('src', './img/longBreak/longBreak.svg')
             }
 
+
             if (valueTimes.longBreak < 10) {
                 minutHtmlElement.innerHTML = `0${valueTimes.longBreak}`
             } 
@@ -149,28 +157,30 @@ class Settings {
         } 
     }
 
-    changeHtmlImgMode(mode, typeImg = 'svg', darkModeImgType = typeImg) {
+    changeHtmlImgMode(mode = 'light', typeImg = 'svg', darkModeImgType = typeImg) {
         const imgTags = this._imgTags.filter(tag => {
             const tagSrc = tag.getAttribute('src').split('.').indexOf(typeImg)
             if (tagSrc !== 0) { return tag } 
         }) 
 
-        if (mode === 'dark') {
-            imgTags.forEach(tag => {
-                const imgDarkMode = tag.getAttribute('src').replace(`.${typeImg}`, '')
-                tag.setAttribute('src', `${imgDarkMode}-darkMode.${darkModeImgType}`)
-            })
-        } 
-        
-        else if (mode === 'light' || mode === undefined) {
-            imgTags.forEach((tag) => {
-                const imgLightMode = tag.getAttribute('src').replace(`-darkMode.${darkModeImgType}`, `.${typeImg}`)
-                tag.setAttribute('src', imgLightMode)   
-            })
-        }
-
-        else {
-            console.error('Sorry, something not right')
+        switch (mode) {
+            case 'dark':
+                imgTags.forEach(tag => {
+                    const imgDarkMode = tag.getAttribute('src').replace(`.${typeImg}`, '')
+                    tag.setAttribute('src', `${imgDarkMode}-darkMode.${darkModeImgType}`)
+                })
+                break 
+            
+            case 'light': 
+                imgTags.forEach((tag) => {
+                    const imgLightMode = tag.getAttribute('src').replace(`-darkMode.${darkModeImgType}`, `.${typeImg}`)
+                    tag.setAttribute('src', imgLightMode)   
+                })
+                break 
+            
+            default:
+                alert('Sorry, something not right: in the changeHtmlImgMode method')
+                break
         }
     }
 

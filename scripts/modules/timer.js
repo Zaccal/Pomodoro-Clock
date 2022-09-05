@@ -7,6 +7,10 @@ const enumeratorMinutHtmlElement = document.querySelector('#minut')
 let interval,
     second = 60
 
+const PATH_ALEREM_CLOCK_FILE = '../../audio/alarm-clock.mp3'
+const PATH_NOTIFICATION_FILE = '../../audio/notice.mp3'
+const TIMER_VERSION = 'V.0.1.1'
+
 export default class Timer {
     static focusTime
     static shortBreakTime 
@@ -24,7 +28,7 @@ export default class Timer {
 
         this.createStopTimerBtn()
 
-        if (second !== 0) {
+        if (second > 0) {
             timeMinut -= 1
 
             if (timeMinut < 10) {
@@ -87,11 +91,11 @@ export default class Timer {
 
             } 
 
-            else {
+            else { // end the timer 
                 this.autoResumeTimer()
                 this.getVoiceAfterWorkSession()
                 this.getNotificationAfterWork()
-                titlePage.innerHTML = 'Pomodoro Clock V.0.1.0'
+                titlePage.innerHTML = `Pomodoro Clock ${TIMER_VERSION}`
                 clearInterval(interval)
             }
 
@@ -110,7 +114,7 @@ export default class Timer {
     }
 
     static returnAllBack() {
-        document.querySelector('title').innerHTML = 'Pomodoro Clock V.0.1.0'
+        document.querySelector('title').innerHTML = `Pomodoro Clock ${TIMER_VERSION}`
 
         document.querySelector('#start').classList.remove('none-btn')
         document.querySelector('#stop').classList.add('none-btn')
@@ -178,10 +182,7 @@ export default class Timer {
                 setTimeout(() => { this.start(this.shortBreakTime) }, 3000)
             }
         } 
-        
         // focus-longBreak is time focus but after work it change time on the long break
-        // next is default parameter but if 'next' is some other value than pass it session. 
-        // `next = 'pass'` it do be focus -> short-break -> long-break,  
         else if (checkTimeShortBreak === true && next === 'next') {
             Settings.usePresentTenseStyles('focus')
 
@@ -229,25 +230,23 @@ export default class Timer {
 
     }
 
-    static getVoiceAfterWorkSession() {
-        const pathAlarmCloclFile = '../../audio/alarm-clock.mp3'
-        
-        const voice = new Voice(pathAlarmCloclFile)
+    static getVoiceAfterWorkSession() {        
+        const voice = new Voice(PATH_ALEREM_CLOCK_FILE, 4000)
         
         const switchSound = document.querySelector('#sound').checked
 
         if (switchSound === true) {
-            voice.getVoiceAlarmClock()
+            voice.runVoice()
         }
     }
 
     static getNotificationAfterWork() {
         const notificationOption = document.querySelector('#notification').checked
-        const voice = new Voice('../../audio/alarm-clock.mp3', '../../audio/notice.mp3')
+        const voice = new Voice(PATH_NOTIFICATION_FILE, 1000)
 
         if (notificationOption === true) { 
             notificationFn()
-            voice.getVoiceNotification()
+            voice.runVoice()
         }
     }
 }

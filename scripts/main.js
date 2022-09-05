@@ -5,17 +5,21 @@ const btnForOpenSetting = document.querySelector('#open-settings')
 
 btnForOpenSetting.addEventListener('click', () => modalSettings.openModal() )
 
-const imgTags = []
-document.querySelectorAll('img[data-img]').forEach(tag => imgTags.unshift(tag))
 
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+const imgTags = Array.from(document.querySelectorAll('img[data-img]'))
+
+const switchDarkModeHTML = document.querySelector('.check-point[type=checkbox]').checked
+
+const settings = new Settings(imgTags)
+
+if (localStorage.theme === 'dark' && switchDarkModeHTML === true || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
-    new Settings(imgTags).changeHtmlImgMode('dark', 'svg')
+    settings.changeHtmlImgMode('dark', 'svg')
 } 
 
 else {
     document.documentElement.classList.remove('dark')
-    new Settings(imgTags).changeHtmlImgMode('light', 'svg')
+    settings.changeHtmlImgMode('light', 'svg')
 }
 
 
@@ -41,19 +45,19 @@ const checkInputNumberValue = () => {
             Number(input.value) > 0 && 
             (Number(input.value) ^ 0) === Number(input.value) === true)  
         { 
-            Settings.saveTimeValuesFromSettings()
             modalSettings.closeModal()
+            Settings.saveTimeValuesFromSettings()
             
-            const checkClassNone = Array.from(document.querySelector('#start').classList).indexOf('none-btn')
+            const checkClassNone = Array.from(document.querySelector('#start').classList).includes('none-btn')
 
-            if (checkClassNone === -1) {
+            if (checkClassNone === false) {
                 const html = document.querySelector('html')
                 const checkTimeFocus = html.classList.contains('focus')
                 const checkTimeShortBreak = html.classList.contains('short-break')
                 const checkTimeFocusLongBreak = html.classList.contains('focus-longBreak')
                 const checkTimeLongBreak = html.classList.contains('long-break')
 
-                if (checkTimeFocus === true, checkTimeFocusLongBreak === true) { Settings.usePresentTenseStyles('focus') }
+                if (checkTimeFocus === true || checkTimeFocusLongBreak === true) { Settings.usePresentTenseStyles('focus') }
                 else if (checkTimeShortBreak === true) { Settings.usePresentTenseStyles('short-break') }
                 else if (checkTimeLongBreak === true) { Settings.usePresentTenseStyles('long-break') }
             }
@@ -61,9 +65,9 @@ const checkInputNumberValue = () => {
     
         else {
             // When user reapte put value in a input it checks and, run itself.
-            input.addEventListener('input', checkInputNumberValue)
+            document.querySelector('#close-settings').addEventListener('click', checkInputNumberValue)
 
-            throw new Error('Input type number must be a number')
+            throw new Error('value input is setting is not valid')
         }
     })
 }

@@ -3,6 +3,11 @@ module.exports = {
   content: ['./**/*.html'],
   darkMode: 'class',
   theme: {
+    screens: {
+      'xxl': {'max': '786px'},
+      'xl': {'max': '388px'},
+    },
+
     extend: {
 
       colors: {
